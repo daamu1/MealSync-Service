@@ -2,6 +2,9 @@ HELP.md
 .env
 .gradle
 build/
+build.gradle
+gradlew.bat
+settings.gradle
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
