@@ -31,4 +31,13 @@ class ApiExceptionHandler {
 		problem.setProperty("timestamp", Instant.now());
 		return problem;
 	}
+	@ExceptionHandler(Exception.class)
+	ProblemDetail handleException(Exception exception) {
+
+		ProblemDetail problem = ProblemDetail
+				.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, exception.getMessage());
+		problem.setTitle("Internal Server Error");
+		problem.setProperty("timestamp", Instant.now());
+		return problem;
+	}
 }

@@ -10,16 +10,28 @@ class KafkaTopicConfig {
 
 	@Bean
 	NewTopic orderCreatedTopic() {
-		return TopicBuilder.name(KafkaTopics.ORDER_CREATED).partitions(3).replicas(1).build();
+		return TopicBuilder
+				.name(KafkaTopics.ORDER_CREATED)
+				.partitions(3)
+				.replicas(1)
+				.build();
 	}
 
 	@Bean
 	NewTopic restaurantAcceptedTopic() {
-		return TopicBuilder.name(KafkaTopics.RESTAURANT_ACCEPTED).partitions(3).replicas(1).build();
+		return TopicBuilder
+				.name(KafkaTopics.RESTAURANT_ACCEPTED)
+				.partitions(3)
+				.replicas(1)
+				.build();
 	}
 
 	@Bean
 	NewTopic deliveryAssignedTopic() {
-		return TopicBuilder.name(KafkaTopics.DELIVERY_ASSIGNED).partitions(3).replicas(1).build();
+		return TopicBuilder
+				.name(KafkaTopics.DELIVERY_ASSIGNED)
+				.partitions(3)
+				.replicas(1)
+				.build();
 	}
 }

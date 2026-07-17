@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProperty scope="context" name="ROOT_LOG_LEVEL" source="LOG_LEVEL_ROOT" defaultValue="INFO"/>
+    <springProperty scope="context" name="APP_LOG_LEVEL" source="LOG_LEVEL_APP" defaultValue="DEBUG"/>
+    <springProperty scope="context" name="SPRING_WEB_LOG_LEVEL" source="LOG_LEVEL_SPRING_WEB" defaultValue="INFO"/>
+    <springProperty scope="context" name="SPRING_KAFKA_LOG_LEVEL" source="LOG_LEVEL_SPRING_KAFKA" defaultValue="INFO"/>
+    <springProperty scope="context" name="APACHE_KAFKA_LOG_LEVEL" source="LOG_LEVEL_APACHE_KAFKA" defaultValue="WARN"/>
+    <springProperty scope="context" name="SQL_LOG_LEVEL" source="LOG_LEVEL_SQL" defaultValue="WARN"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.damu" level="${APP_LOG_LEVEL}"/>
+    <logger name="org.springframework.web" level="${SPRING_WEB_LOG_LEVEL}"/>
+    <logger name="org.springframework.kafka" level="${SPRING_KAFKA_LOG_LEVEL}"/>
+    <logger name="org.apache.kafka" level="${APACHE_KAFKA_LOG_LEVEL}"/>
+    <logger name="org.hibernate.SQL" level="${SQL_LOG_LEVEL}"/>
+
+    <root level="${ROOT_LOG_LEVEL}"><appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

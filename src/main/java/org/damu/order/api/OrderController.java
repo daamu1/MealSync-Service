@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+import lombok.RequiredArgsConstructor;
 import org.damu.order.application.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,14 +22,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping("/api/orders")
+@RequiredArgsConstructor
 @Tag(name = "Orders", description = "Create and inspect food delivery orders")
 public class OrderController {
 
 	private final OrderService orderService;
-
-	public OrderController(OrderService orderService) {
-		this.orderService = orderService;
-	}
 
 	@PostMapping
 	@Operation(summary = "Place an order", description = "Creates an order and publishes the OrderCreatedEvent to Kafka.")

@@ -13,7 +13,9 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -86,35 +88,4 @@ public class Order {
 		updatedAt = Instant.now();
 	}
 
-	public UUID getId() {
-		return id;
-	}
-
-	public String getCustomerName() {
-		return customerName;
-	}
-
-	public String getRestaurantName() {
-		return restaurantName;
-	}
-
-	public BigDecimal getTotalAmount() {
-		return totalAmount;
-	}
-
-	public OrderStatus getStatus() {
-		return status;
-	}
-
-	public String getRiderName() {
-		return riderName;
-	}
-
-	public Instant getCreatedAt() {
-		return createdAt;
-	}
-
-	public Instant getUpdatedAt() {
-		return updatedAt;
-	}
 }

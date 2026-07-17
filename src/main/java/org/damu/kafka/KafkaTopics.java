@@ -1,11 +1,10 @@
 package org.damu.kafka;
 
-public final class KafkaTopics {
+import lombok.experimental.UtilityClass;
 
-	public static final String ORDER_CREATED = "mealsync.order.created";
-	public static final String RESTAURANT_ACCEPTED = "mealsync.restaurant.accepted";
-	public static final String DELIVERY_ASSIGNED = "mealsync.delivery.assigned";
-
-	private KafkaTopics() {
-	}
+@UtilityClass
+public class KafkaTopics {
+	public final String ORDER_CREATED = "mealsync.order.created";
+	public final String RESTAURANT_ACCEPTED = "mealsync.restaurant.accepted";
+	public final String DELIVERY_ASSIGNED = "mealsync.delivery.assigned";
 }

@@ -33,8 +33,10 @@ Swagger UI:
 
 Logs:
 
-- Console logs use the configured pattern in `application.properties`.
-- File logs are written to `logs/mealsync.log` by default.
+- Logs are printed to the console only.
+- In IntelliJ, see logs in the Run/Debug tool window.
+- In terminal, see logs where `./gradlew bootRun` is running.
+- Log formatting is configured in `src/main/resources/logback-spring.xml`.
 - Log levels are controlled from `.env`.
 
 Create an order:
