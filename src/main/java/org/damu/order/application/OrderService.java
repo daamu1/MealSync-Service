@@ -1,9 +1,14 @@
-package org.damu.order;
+package org.damu.order.application;
 
 import java.util.UUID;
 
 import org.damu.common.events.OrderCreatedEvent;
 import org.damu.kafka.MealSyncEventPublisher;
+import org.damu.order.api.OrderResponse;
+import org.damu.order.api.PlaceOrderRequest;
+import org.damu.order.domain.Order;
+import org.damu.order.exception.OrderNotFoundException;
+import org.damu.order.infrastructure.OrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

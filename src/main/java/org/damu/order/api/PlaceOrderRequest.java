@@ -1,4 +1,4 @@
-package org.damu.order;
+package org.damu.order.api;
 
 import java.math.BigDecimal;
 

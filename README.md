@@ -15,24 +15,27 @@ Spring Boot modular monolith for a food delivery flow using Kafka as the interna
 Start infrastructure:
 
 ```bash
-cp .env.example .env
 docker compose up -d
 ```
 
-Run the application with the default in-memory H2 database:
+The application imports `.env` automatically through Spring config. Update `.env` if your local Kafka or database ports, username, or password are different.
+
+Run the application:
 
 ```bash
 ./gradlew bootRun
 ```
 
-Or run with Postgres:
+Swagger UI:
 
-```bash
-set -a
-source .env
-set +a
-./gradlew bootRun
-```
+- http://localhost:8080/swagger-ui.html
+- http://localhost:8080/v3/api-docs
+
+Logs:
+
+- Console logs use the configured pattern in `application.properties`.
+- File logs are written to `logs/mealsync.log` by default.
+- Log levels are controlled from `.env`.
 
 Create an order:
 

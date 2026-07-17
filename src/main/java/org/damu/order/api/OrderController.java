@@ -1,4 +1,4 @@
-package org.damu.order;
+package org.damu.order.api;
 
 import java.net.URI;
 import java.util.UUID;
@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+import org.damu.order.application.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,7 +36,7 @@ public class OrderController {
 			@ApiResponse(responseCode = "201", description = "Order created"),
 			@ApiResponse(responseCode = "400", description = "Invalid order request")
 	})
-	ResponseEntity<OrderResponse> placeOrder(@Valid @RequestBody PlaceOrderRequest request) {
+	public ResponseEntity<OrderResponse> placeOrder(@Valid @RequestBody PlaceOrderRequest request) {
 		OrderResponse response = orderService.placeOrder(request);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}")
@@ -50,7 +51,7 @@ public class OrderController {
 			@ApiResponse(responseCode = "200", description = "Order found"),
 			@ApiResponse(responseCode = "404", description = "Order not found")
 	})
-	OrderResponse getOrder(@PathVariable UUID orderId) {
+	public OrderResponse getOrder(@PathVariable UUID orderId) {
 		return orderService.getOrder(orderId);
 	}
 }

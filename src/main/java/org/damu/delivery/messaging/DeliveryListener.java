@@ -1,6 +1,7 @@
-package org.damu.delivery;
+package org.damu.delivery.messaging;
 
 import org.damu.common.events.RestaurantAcceptedEvent;
+import org.damu.delivery.application.DeliveryService;
 import org.damu.kafka.KafkaTopics;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;

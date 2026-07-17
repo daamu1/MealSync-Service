@@ -2,7 +2,7 @@ package org.damu.common.api;
 
 import java.time.Instant;
 
-import org.damu.order.OrderNotFoundException;
+import org.damu.order.exception.OrderNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.MethodArgumentNotValidException;

@@ -1,4 +1,4 @@
-package org.damu.delivery;
+package org.damu.delivery.domain;
 
 import java.time.Instant;
 import java.util.UUID;

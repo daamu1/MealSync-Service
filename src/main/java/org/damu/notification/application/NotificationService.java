@@ -1,6 +1,8 @@
-package org.damu.notification;
+package org.damu.notification.application;
 
 import org.damu.common.events.DeliveryAssignedEvent;
+import org.damu.notification.domain.NotificationLog;
+import org.damu.notification.infrastructure.NotificationLogRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

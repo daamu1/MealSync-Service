@@ -5,8 +5,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.math.BigDecimal;
 import java.time.Duration;
 
-import org.damu.delivery.DeliveryAssignmentRepository;
-import org.damu.notification.NotificationLogRepository;
+import org.damu.delivery.infrastructure.DeliveryAssignmentRepository;
+import org.damu.notification.infrastructure.NotificationLogRepository;
+import org.damu.order.api.OrderResponse;
+import org.damu.order.api.PlaceOrderRequest;
+import org.damu.order.application.OrderService;
+import org.damu.order.domain.Order;
+import org.damu.order.domain.OrderStatus;
+import org.damu.order.infrastructure.OrderRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

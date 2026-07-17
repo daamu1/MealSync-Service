@@ -1,7 +1,8 @@
-package org.damu.notification;
+package org.damu.notification.messaging;
 
 import org.damu.common.events.DeliveryAssignedEvent;
 import org.damu.kafka.KafkaTopics;
+import org.damu.notification.application.NotificationService;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 

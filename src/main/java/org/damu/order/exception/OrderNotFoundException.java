@@ -1,4 +1,4 @@
-package org.damu.order;
+package org.damu.order.exception;
 
 import java.util.UUID;
 

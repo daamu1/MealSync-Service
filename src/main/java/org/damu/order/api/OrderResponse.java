@@ -1,8 +1,11 @@
-package org.damu.order;
+package org.damu.order.api;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.UUID;
+
+import org.damu.order.domain.Order;
+import org.damu.order.domain.OrderStatus;
 
 public record OrderResponse(
 		UUID id,
@@ -15,7 +18,7 @@ public record OrderResponse(
 		Instant updatedAt
 ) {
 
-	static OrderResponse from(Order order) {
+	public static OrderResponse from(Order order) {
 		return new OrderResponse(
 				order.getId(),
 				order.getCustomerName(),

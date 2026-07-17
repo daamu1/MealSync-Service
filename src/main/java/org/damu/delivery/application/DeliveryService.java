@@ -1,11 +1,13 @@
-package org.damu.delivery;
+package org.damu.delivery.application;
 
 import org.damu.common.events.DeliveryAssignedEvent;
 import org.damu.common.events.RestaurantAcceptedEvent;
+import org.damu.delivery.domain.DeliveryAssignment;
+import org.damu.delivery.infrastructure.DeliveryAssignmentRepository;
 import org.damu.kafka.MealSyncEventPublisher;
-import org.damu.order.Order;
-import org.damu.order.OrderNotFoundException;
-import org.damu.order.OrderRepository;
+import org.damu.order.domain.Order;
+import org.damu.order.exception.OrderNotFoundException;
+import org.damu.order.infrastructure.OrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

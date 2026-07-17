@@ -1,4 +1,4 @@
-package org.damu.notification;
+package org.damu.notification.domain;
 
 import java.time.Instant;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package org.damu.order;
+package org.damu.order.domain;
 
 import java.math.BigDecimal;
 import java.time.Instant;

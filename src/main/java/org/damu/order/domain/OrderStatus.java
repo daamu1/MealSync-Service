@@ -1,4 +1,4 @@
-package org.damu.order;
+package org.damu.order.domain;
 
 public enum OrderStatus {
 	CREATED,
