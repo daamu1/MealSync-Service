@@ -19,7 +19,10 @@ import org.springframework.context.annotation.Configuration;
 				license = @License(name = "Private")
 		),
 		servers = {
-				@Server(url = "http://localhost:8080", description = "Local development")
+				@Server(url = "/", description = "Current server"),
+				@Server(url = "http://localhost:8080", description = "Local development"),
+				@Server(url = "https://api-dev.mealsync.com", description = "Development server"),
+				@Server(url = "https://api.mealsync.com", description = "Production server")
 		}
 )
 @SecurityScheme(
