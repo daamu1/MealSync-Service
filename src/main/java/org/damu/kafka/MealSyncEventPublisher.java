@@ -31,7 +31,7 @@ public class MealSyncEventPublisher {
 	}
 
 	private void publish(String topic, UUID aggregateId, Object event) {
-		log.debug("Publishing event topic={} aggregateId={} payloadType={}", topic, aggregateId, event.getClass().getSimpleName());
+		log.info("Publishing event topic={} aggregateId={} payloadType={}", topic, aggregateId, event.getClass().getSimpleName());
 		kafkaTemplate.send(topic, aggregateId.toString(), event);
 	}
 }

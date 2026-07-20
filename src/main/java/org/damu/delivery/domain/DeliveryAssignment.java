@@ -24,9 +24,6 @@ public class DeliveryAssignment {
     @Column(nullable = false, updatable = false)
     private Instant assignedAt;
 
-    protected DeliveryAssignment() {
-    }
-
     private DeliveryAssignment(UUID orderId, String riderName) {
         this.orderId = orderId;
         this.riderName = riderName;

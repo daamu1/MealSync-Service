@@ -29,9 +29,6 @@ public class NotificationLog {
 	@Column(nullable = false, updatable = false)
 	private Instant sentAt;
 
-	protected NotificationLog() {
-	}
-
 	private NotificationLog(UUID orderId, String message) {
 		this.orderId = orderId;
 		this.message = message;

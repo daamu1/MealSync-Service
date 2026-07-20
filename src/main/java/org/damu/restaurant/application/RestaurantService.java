@@ -23,7 +23,8 @@ public class RestaurantService {
 
     @Transactional
     public void acceptOrder(OrderCreatedEvent event) {
-        Order order = orderRepository.findById(event.orderId()).orElseThrow(() -> new OrderNotFoundException(event.orderId()));
+        Order order = orderRepository.findById(event.orderId())
+                .orElseThrow(() -> new OrderNotFoundException(event.orderId()));
         order.markAcceptedByRestaurant();
         Instant estimatedReadyAt = Instant.now().plus(20, ChronoUnit.MINUTES);
         log.info("Restaurant accepted order id={} restaurant={} estimatedReadyAt={}", order.getId(), order.getRestaurantName(), estimatedReadyAt);

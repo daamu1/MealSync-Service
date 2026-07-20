@@ -2,6 +2,7 @@ HELP.md
 .env
 .gradle
 build/
+kafka-logs/
 build.gradle
 gradlew
 gradlew.bat
